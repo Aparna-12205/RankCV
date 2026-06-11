@@ -29,6 +29,14 @@ RankCV is an AI-powered Applicant Tracking System (ATS) that ranks resumes again
 4. Compute semantic similarity
 5. Rank candidates automatically
 
+## Screenshots
+
+### Upload Page
+![Upload Page](screenshots/upload.png)
+
+### Ranking Output
+![Ranking Output](screenshots/ranking.png)
+
 ## Future Improvements
 
 * Cloud deployment (Render / AWS / Vercel) for public access
