@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>RankCV</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+
+            font-family: 'Segoe UI', sans-serif;
+
+            background: #f4f7fc;
+
+            margin: 0;
+
+            padding: 30px;
+        }
+
+        .container {
+
+            max-width: 1000px;
+
+            margin: auto;
+        }
+
+        h1 {
+
+            text-align: center;
+
+            color: #1e293b;
+
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+
+            text-align: center;
+
+            color: #64748b;
+
+            margin-bottom: 30px;
+        }
+
+        .card {
+
+            background: white;
+
+            padding: 25px;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        textarea {
+
+            width: 100%;
+
+            padding: 12px;
+
+            border: 1px solid #d1d5db;
+
+            border-radius: 8px;
+
+            resize: vertical;
+
+            font-size: 14px;
+        }
+
+        input[type="file"] {
+
+            margin-top: 15px;
+        }
+
+        .button-group {
+
+            margin-top: 20px;
+
+            display: flex;
+
+            gap: 10px;
+
+            flex-wrap: wrap;
+        }
+
+        button {
+
+            border: none;
+
+            padding: 12px 20px;
+
+            border-radius: 8px;
+
+            cursor: pointer;
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+            color: white;
+        }
+
+        #rankBtn {
+
+            background: #2563eb;
+        }
+
+        #rankBtn:hover {
+
+            background: #1d4ed8;
+        }
+
+        #exportBtn {
+
+            background: #16a34a;
+        }
+
+        #exportBtn:hover {
+
+            background: #15803d;
+        }
+
+        #status {
+
+            margin-top: 20px;
+
+            font-weight: bold;
+
+            color: #2563eb;
+
+            padding: 10px;
+
+            background: #eff6ff;
+
+            border-radius: 8px;
+        }
+
+        #results {
+
+            margin-top: 30px;
+        }
+
+        .candidate {
+
+            background: white;
+
+            border-radius: 12px;
+
+            padding: 20px;
+
+            margin-bottom: 20px;
+
+            box-shadow:
+                0 4px 10px rgba(0,0,0,0.08);
+        }
+
+        .candidate h3 {
+
+            margin-top: 0;
+
+            color: #1e293b;
+        }
+
+        .score {
+
+            font-size: 24px;
+
+            font-weight: bold;
+
+            color: #16a34a;
+        }
+
+        .progress-container {
+
+            width: 100%;
+
+            background: #e5e7eb;
+
+            border-radius: 10px;
+
+            overflow: hidden;
+
+            margin: 10px 0;
+        }
+
+        .progress-bar {
+
+            height: 18px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #22c55e,
+                    #16a34a
+                );
+        }
+
+        .skill-tag {
+
+            display: inline-block;
+
+            background: #dbeafe;
+
+            color: #1d4ed8;
+
+            padding: 5px 10px;
+
+            border-radius: 20px;
+
+            margin: 3px;
+
+            font-size: 13px;
+        }
+
+        .missing-tag {
+
+            display: inline-block;
+
+            background: #fee2e2;
+
+            color: #dc2626;
+
+            padding: 5px 10px;
+
+            border-radius: 20px;
+
+            margin: 3px;
+
+            font-size: 13px;
+        }
+
+        .best-candidate {
+
+            background: #16a34a;
+
+            color: white;
+
+            padding: 8px;
+
+            border-radius: 8px;
+
+            font-weight: bold;
+
+            margin-bottom: 10px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🏆 RankCV</h1>
+
+        <p class="subtitle">
+            AI-Powered Resume Ranking System
+        </p>
+
+        <div class="card">
+
+            <h3>
+                Job Description
+            </h3>
+
+            <textarea
+                id="jobDescription"
+                rows="8"
+                placeholder="Paste Job Description Here">
+            </textarea>
+
+            <br>
+
+            <input
+                type="file"
+                id="resumeFiles"
+                multiple
+                accept=".pdf,.docx">
+
+            <div class="button-group">
+
+                <button
+                    id="rankBtn"
+                    type="button">
+
+                    Rank Candidates
+
+                </button>
+
+                <button
+                    id="exportBtn"
+                    type="button">
+
+                    Export CSV
+
+                </button>
+
+            </div>
+
+            <div id="status">
+
+                Ready
+
+            </div>
+
+        </div>
+
+        <div id="results">
+
+            Results will appear here...
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
